@@ -1,0 +1,717 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpoudmorphyTech IT Services & Products</title>
+<style>
+/* CSS RESET & GENERAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Color Scheme Variables */
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #00bfff;
+    --dark-color: #2b2d42;
+    --light-color: #f8f9fa;
+    --border-color: #dddddd;
+    --text-color: #333333;
+}
+
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+ 
+    .bg-light {
+    background-image: url(white\ &\ light\ blue.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+/* SECTION HEADER */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.3rem;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+.section-header .line {
+    width: 70px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #004085;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* GRIDS */
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+/* 1. NAVIGATION BAR & HERO SECTION */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    padding-bottom: 60px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+.logo h2 {
+    font-size: 1.7rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* 2. ABOUT US SECTION */
+.about-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+.about-content ol {
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.about-content ol li {
+    margin-bottom: 8px;
+}
+
+.mv-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.mv-box {
+    flex: 1;
+    background-color: var(--light-color);
+    padding: 25px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+/* 3. SERVICES SECTION */
+.cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+    background-color: #ffffff;
+    padding-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    padding: 0 15px;
+    color: #666;
+}
+
+/* 4. OUR TEAM SECTION */
+.team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.team-member {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--secondary-color);
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+}
+
+.team-member .role {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.team-member .bio {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* 5. PRODUCTS SECTION */
+.products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 40px;
+}
+
+.product-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.product-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.product-item p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.product-item .price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #d90429;
+}
+
+/* TABLES STYLING */
+.table-container {
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* 6. CONTACT US FORMS */
+.contact-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-form {
+    flex: 1.3;
+    background-color: var(--light-color);
+    padding: 30px;
+    border-radius: 6px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    margin-bottom: 10px;
+}
+
+.contact-info h3:not(:first-child) {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.map-container {
+    margin-top: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--dark-color);
+    color: #ffffff;
+    padding: 25px 0;
+}
+
+/* RESPONSIVE LAYOUT MEDIA QUERIES */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    .mv-container {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+<body>
+
+<header id="home">
+    <div class="container navbar">
+        <div class="logo">
+            <h2>SpoudmorphyTech</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="hero container">
+        <div class="hero-text">
+            <h1>Welcome to SpoudmorphyTech</h1>
+            <p>Your trusted partner for cutting-edge computer hardware, custom software development, robust networking architectures, and reliable 24/7 IT support services.</p>
+            <a href="#contact" class="btn">Get IT Support Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="morphy's logo.jpeg" alt="SpoudmorphyTech Team working on technology" class="site-logo">
+        </div>
+    </div>
+</header>
+
+<!-- 2. ABOUT US SECTION -->
+<section id="about" class="container section">
+    <div class="section-header">
+        <h2>About Us</h2>
+        <div class="line"></div>
+    </div>
+    <div class="about-content">
+        <h3>Our History</h3>
+        <p>Founded in 2025, SpoudmorphyTech started as a small computer repair workshop. Over the years, we have grown into a leading technology solution provider serving hundreds of corporate clients and individual consumers across the region.</p>
+        
+        <h4>Our Milestones</h4>
+        <ol>
+            <li>2025 - SpoudmorphyTech launched in a small retail space.</li>
+            <li>2026 - Expanded services to include enterprise networking solutions.</li>
+            <li>2026 - Launched custom cloud software development division.</li>
+            <li>2027 - Awarded Top IT Support Agency of the Year.</li>
+        </ol>
+    </div>
+
+    <div class="mv-container">
+        <div class="mv-box">
+            <h4>Our Mission</h4>
+            <p>To empower businesses and individuals by delivering reliable, high-performance IT infrastructure, software solutions, and unparalleled tech support.</p>
+        </div>
+        <div class="mv-box">
+            <h4>Our Vision</h4>
+            <p>To be the premier global technology companion known for driving digital innovation and seamless connectivity for a smarter tomorrow.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 3. SERVICES SECTION -->
+<section id="services" class="bg-light section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <div class="line"></div>
+        </div>
+        <div class="grid cards-grid">
+            <div class="card">
+                <img src="computer hardware.jpeg" alt="Computer Hardware">
+                <h3>Computer Hardware</h3>
+                <p>Procurement, setup, diagnosis, and expert repair of servers, workstations, and business laptops.</p>
+            </div>
+            <div class="card">
+                <img src="software development.jpeg" alt="Software Development">
+                <h3>Software Solutions</h3>
+                <p>Custom software development, mobile application design, and enterprise database system architecture.</p>
+            </div>
+            <div class="card">
+                <img src="networking.jpeg" alt="Networking">
+                <h3>Networking & Security</h3>
+                <p>Designing, configuring, maintaining local networks (LAN/WAN), and robust firewall security systems.</p>
+            </div>
+            <div class="card">
+                <img src="it support.jpeg" alt="IT Support">
+                <h3>24/7 IT Support</h3>
+                <p>Proactive monitoring, remote troubleshooting, helpdesk services, and immediate on-site emergencies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. OUR TEAM SECTION -->
+<section id="team" class="container section">
+    <div class="section-header">
+        <h2>Our Team</h2>
+        <div class="line"></div>
+    </div>
+    <div class="grid team-grid">
+        <div class="team-member">
+            <img src="Lordina.jpeg" alt="Lordina">
+            <h3>Lordina Mina Brew Ocran</h3>
+             <h5>index number 26104853</h5>
+            <p class="role">Chief Executive Officer</p>
+            <p class="bio">Lordina has over 15 years of industry experience leading enterprise-grade digital transformations.</p>
+        </div>
+        <div class="team-member">
+            <img src="gispy.jpeg" alt="Peter Chikpa">
+            <h3>Peter Chikpa</h3>
+            <h5>index number 26105028</h5>
+            <p class="role">Lead Software Engineer</p>
+            <p class="bio">Peter is a full-stack engineering veteran dedicated to writing clean, optimized software frameworks.</p>
+        </div>
+        <div class="team-member">
+            <img src="danny.jpeg" alt="Daniel Bodooi">
+            <h3>Adam mohammed</h3>
+             <h5>index number 26104829</h5>
+            <p class="role">Senior Network Architect</p>
+            <p class="bio">mohammed designs highly secure, redundant wired and wireless infrastructures for massive campuses.</p>
+        </div>
+        <div class="team-member">
+            <img src="richeal.jpeg" alt="Ahenkorah Richeal Animah">
+            <h3>Ahenkorah Richeal Animah</h3>
+             <h5>index number 26104620</h5>
+            <p class="role">IT Support Manager</p>
+            <p class="bio">Richeal directs our rapid-response helpdesk, keeping clients online and running smoothly at all hours.</p>
+        </div>
+        <div class="team-member">
+            <img src="martey.jpeg" alt="Martey Emmanuel">
+            <h3>Martey Emmanuel</h3>
+             <h5>index number 26104875</h5>
+            <p class="role">Senior Infrastructure Specialist</p>
+            <p class="bio">Emmanuel designs highly secure, redundant wired and wireless infrastructures for massive campuses.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 5. PRODUCTS SECTION -->
+<section id="products" class="bg-light section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Products</h2>
+            <div class="line"></div>
+        </div>
+        <div class="grid products-grid">
+            <div class="product-item">
+                <img src="pro desktop pc.jpeg" alt="Pro Desktop PC">
+                <h3>SpoudmorphyTech Desktop Pro</h3>
+                <p>High-performance computing powerhouse tailored for engineering suites.</p>
+                <p class="price">$1,299.00</p>
+            </div>
+            <div class="product-item">
+                <img src="router.jpeg" alt="Enterprise Router">
+                <h3>SecureRoute Enterprise X</h3>
+                <p>Heavy-duty network router featuring hardware-accelerated firewalling.</p>
+                <p class="price">$450.00</p>
+            </div>
+            <div class="product-item">
+                <img src="server node.jpeg" alt="Server Node">
+                <h3>AlphaStream Server Node</h3>
+                <p>Ultra-reliable, cloud host rack servers ready for heavy web traffic.</p>
+                <p class="price">$2,899.00</p>
+            </div>
+            <div class="product-item">
+                <img src="antivirous.jpeg" alt="Antivirus Suite">
+                <h3>Spoudmorphyshield Antivirus Suite</h3>
+                <p>AI-driven local endpoint protection license monitoring software threats.</p>
+                <p class="price">$89.00/yr</p>
+            </div>
+            <div class="product-item">
+                <img src="ups battry.jpeg" alt="UPS Battery">
+                <h3>PowerGuard 1500VA UPS</h3>
+                <p>Smart backup battery unit safeguarding vital servers against blackout surges.</p>
+                <p class="price">$199.00</p>
+            </div>
+        </div>
+
+        <!-- Table Integration -->
+        <div class="table-container">
+            <h3>Product Warranty & Support Plans</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Type</th>
+                        <th>Standard Warranty</th>
+                        <th>Support Level</th>
+                        <th>Coverage Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Desktop Workstations</td>
+                        <td>3 Years Hardware</td>
+                        <td>24/7 Priority Support</td>
+                        <td>On-site repair and parts replacement.</td>
+                    </tr>
+                    <tr>
+                        <td>Networking Gear</td>
+                        <td>2 Years Limited</td>
+                        <td>Business Hours</td>
+                        <td>Firmware updates and remote troubleshooting.</td>
+                    </tr>
+                    <tr>
+                        <td>Server Nodes</td>
+                        <td>5 Years Enterprise</td>
+                        <td>24/7 VIP Support</td>
+                        <td>Immediate dispatch with zero downtime guarantee.</td>
+                    </tr>
+                    <tr>
+                        <td>Software Subscriptions</td>
+                        <td>Duration of License</td>
+                        <td>Online Helpdesk</td>
+                        <td>Free security definitions and feature updates.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- 6. CONTACT US SECTION -->
+<section id="contact" class="container section">
+    <div class="section-header">
+        <h2>Contact Us</h2>
+        <div class="line"></div>
+    </div>
+    <div class="contact-wrapper">
+        <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required placeholder="Service inquiry or issue">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Describe how we can help you..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-block">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <p><strong>Email:</strong> <a href="mailto:support@spoudmorphytech.com">support@spoudmorphytech.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+23356789870">+233 (567) 898-70</a></p>
+            <p><strong>Office Hours:</strong> Monday – Friday, 8:00 AM – 6:00 PM</p>
+
+            <h3>Headquarters</h3>
+            <p>123 Innovation Way, Tech Suite 400<br>Silicon Valley, CA 94025</p>
+
+            <div class="map-container">
+                <p><em>Oppsite Knuntsford University Colledge</em></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container text-center">
+        <p>&copy; 2026 SpoudmorphyTech. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
